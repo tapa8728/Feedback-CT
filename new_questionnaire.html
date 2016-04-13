@@ -47,29 +47,6 @@
         
         <script>
         $(function() {
-            //LIKE SLIDER
-            $("#like_slider").ionRangeSlider({
-                hide_min_max: true,
-                //keyboard: true,
-                min: 0,
-                max: 10,
-                from: 0,
-                type: 'single',
-                step: 1,
-                drag_interval: true,
-                //prefix: "",
-                //postfix: "",
-                values: [
-                            "No Input", "Not engaged", "2",
-                            "3", "4", "Moderate",
-                            "6", "7", "8",
-                            "9", "Very Engaging"
-                        ],
-                grid: true,
-                grid_num: 4, 
-                prettify_enabled: true
-            });
-
             //DIFFICULTY SLIDER
             $("#difficulty_slider").ionRangeSlider({
                 hide_min_max: true,
@@ -89,27 +66,6 @@
                         ],
                 grid: true,
                 grid_num: 8,
-                prettify_enabled: true
-            });
-
-            //INFORMATIVE SLIDER
-            $("#informative_slider").ionRangeSlider({
-                hide_min_max: true,
-                //keyboard: true,
-                min: 0,
-                max: 10,
-                from: 0,
-                type: 'single',
-                step: 1,
-                //prefix: "",
-                //postfix: "",
-                values: [
-                            "Not informative", "1", "2",
-                            "3", "4", "Moderate",
-                            "6", "7", "8",
-                            "9", "Very informative"
-                        ],
-                grid: true,
                 prettify_enabled: true
             });
 
@@ -255,8 +211,10 @@
 
     <script>
        $(document).ready(function(){
+             
+             
             //change the color on Hover
-            $(".minus1, .minus2").hover(function()
+            $(".minus1,.minus2").hover(function()
             {
                 $(this).css("color","#4d0000");
             },
@@ -264,15 +222,16 @@
             {
                 $(this).css("color","");
             });
-
-            $(".minus1").onClick(function(){
-                //reset the difficulty slider
-
+            
+              
+            $(".minus1").click(function(){
+                var slider1 = $("#difficulty_slider").data("ionRangeSlider");
+                slider1.reset();
             });
 
-            $(".minus1").onClick(function(){
-                //reset the difficulty slider
-
+            $(".minus2").click(function(){
+                var slider2 = $("#distraction_slider").data("ionRangeSlider");
+                slider2.reset();
             });
         });
 </script>
