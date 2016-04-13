@@ -1,1 +1,1 @@
-<?php include_once("old_questionnaire.html"); ?>
+<?php include_once("new_questionnaire.html"); ?>
