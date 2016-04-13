@@ -87,7 +87,8 @@ strong {
   padding-top: 15px;
 }
 
-.minus{
+/* to reset the sliders */
+.minus1,.minus2{
   padding-top: 23px;
-  color: grey;
+  color: #a6a6a6;
 }
