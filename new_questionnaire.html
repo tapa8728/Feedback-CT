@@ -55,36 +55,39 @@
             from: 0,
             type: 'single',
             step: 1,
+            drag_interval: true,
             //prefix: "",
             //postfix: "",
             values: [
-                        "Not engaged", "1", "2",
+                        "No Input", "Not engaged", "2",
                         "3", "4", "Moderate",
                         "6", "7", "8",
                         "9", "Very Engaging"
                     ],
             grid: true,
+            grid_num: 4, 
             prettify_enabled: true
         });
 
         //DIFFICULTY SLIDER
         $("#difficulty_slider").ionRangeSlider({
             hide_min_max: true,
-            //keyboard: true,
+            keyboard: true,
             min: 0,
             max: 10,
             from: 0,
             type: 'single',
-            step: 1,
+            step: 10,
+             drag_interval: true,
             //prefix: "",
             //postfix: "",
             values: [
-                        "Not difficult at all", "1", "2",
-                        "3", "4", "Moderate",
-                        "6", "7", "8",
+                        "No Input", "Not difficult", "2",
+                        "3", "4", "Somewhat Difficult" ,"6", "7", "8",
                         "9", "Very Difficult"
                     ],
             grid: true,
+            grid_num: 8,
             prettify_enabled: true
         });
 
@@ -121,10 +124,10 @@
             //prefix: "",
             //postfix: "",
             values: [
-                        "Not distracting", "1", "2",
-                        "3", "4", "Moderate",
+                        "No Input","No distraction", "2", "3",
+                        "4", "Some distractions",
                         "6", "7", "8",
-                        "9", "Very distracting"
+                        "9", "Frquent iterruptions"
                     ],
             grid: true,
             prettify_enabled: true
@@ -145,7 +148,7 @@
 
             <!-- beginning of a question -->
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <h4>How would you rate this test?</h4>
                 </div>
 
@@ -154,94 +157,83 @@
                         <input id="input-21d" value="" type="number" class="rating" min=0 max=5 step=1 data-stars="5" data-size="sm">
                     </div>
                 </div>
+                <div class="col-md-3">
+                    
+                </div>
             </div>
             <!-- end of a question -->
             <hr>
             <!-- beginning of a question -->
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <h4>How difficult did you find this test?</h4>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <div>
                         <input type="text" id="difficulty_slider" name="difficulty" value="" />
                     </div>
                 </div>
+                <div class="col-md-2">
+                	<h4> Reset slider </h4>
+                    </div>
             </div>
             <!-- end of a question -->
             <hr>
             <!-- beginning of a question -->
             <div class="row">
-                <div class="col-md-5">
-                    <h4>Did you like it?</h4>
-                </div>
-
-                <div class="col-md-5">
-                    <div>
-                        <input type="text" id="like_slider" name="like" value="" />
-                    </div>
-                </div>
-            </div>
-            <!-- end of a question -->
-            <hr>           
-            <!-- beginning of a question -->
-            <div class="row">
-                <div class="col-md-5">
-                    <h4>Did you feel you understood the instructions?</h4>
-                </div>
-                <div class="col-md-5">
-                    <div>
-                        <input type="text" id="informative_slider" name="informative" value="" />
-                    </div>
-                </div>
-            </div>
-            <!-- end of a question -->
-           <hr>
-            <!-- beginning of a question -->
-            <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <h4>How distracting was your environment? </h4>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <div>
                         <input type="text" id="distraction_slider" name="distraction" value="" />
                     </div>
                 </div>
+                <div class="col-md-2">
+                    <h4>Reset Slider </h4>
+                </div>
             </div>
             <!-- end of a question -->
             <hr>
             <!-- beginning of a question -->
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <h4>Did anyone help you?</h4>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <div>
                         <input type="checkbox" checked data-toggle="toggle" data-on="Yes" data-off="No">
-
-                    </div>
+					</div>
                 </div>
             </div>
             <!-- end of a question -->
             <hr>
             <!-- beginning of a question -->
             <div class="row">
-                <div class="col-md-5">
-                    <h4>Please provide any other comments to help us improve this test</h4>
+                <div class="col-md-4">
+                    <h4>Please let us know if you have any additional comments that could help us improve your experience</h4>
                 </div>
-                <div class="col-md-5">
-                    <textarea id="openended" cols="60" rows="4"></textarea>
+                <div class="col-md-8">
+                    <textarea id="openended" cols="80" rows="4"></textarea>
                 </div>
             </div>
             <!-- end of a question -->
-        </form>
-        <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-7"></div>
+                <div class="col-md-1">
+                    <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
                     Finish <span class="glyphicon glyphicon-arrow-right"></span>
-                </button>
+        			</button>
+                </div>
+            </div>
+   
+        </form>
+        
         </div>
     </div>
     </div>
-        <div class="text-right">
+        <!-- <div class="text-right">
             <h3><a href="old_questionnaire.html"> Old Questionnaire</a></h3>
-        </div>
+        </div> -->
     </div>
