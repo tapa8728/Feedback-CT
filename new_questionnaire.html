@@ -17,9 +17,9 @@
         <!-- SLIDER Skins -->
     <!-- <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css"/> -->
     <link rel="stylesheet" href="css/ion.rangeSlider.skinHTML5.css" />
-    <!-- <link rel="stylesheet" href="css/ion.rangeSlider.skinModern.css" />
-    <link rel="stylesheet" href="css/ion.rangeSlider.skinNice.css" />
-    <link rel="stylesheet" href="css/ion.rangeSlider.skinSimple.css" /> -->
+    <!-- <link rel="stylesheet" href="css/ion.rangeSlider.skinModern.css" /> -->
+    <!-- <link rel="stylesheet" href="css/ion.rangeSlider.skinNice.css" /> -->
+    <!-- <link rel="stylesheet" href="css/ion.rangeSlider.skinSimple.css" /> -->
 
     <!-- All JS -->
     <script src="js/jquery-1.11.3.min.js"></script>
@@ -120,7 +120,7 @@
             max: 10,
             from: 0,
             type: 'single',
-            step: 1,
+            //step: 1,
             //prefix: "",
             //postfix: "",
             values: [
@@ -130,6 +130,7 @@
                         "9", "Frquent iterruptions"
                     ],
             grid: true,
+            grid_num: 10,
             prettify_enabled: true
         });
     });
@@ -152,14 +153,15 @@
                     <h4>How would you rate this test?</h4>
                 </div>
 
-                <div class="col-md-5">
+                <div class="col-md-7">
                     <div>
                         <input id="input-21d" value="" type="number" class="rating" min=0 max=5 step=1 data-stars="5" data-size="sm">
                     </div>
                 </div>
-                <div class="col-md-3">
+                 <div class="col-md-1">
                     
                 </div>
+                
             </div>
             <!-- end of a question -->
             <hr>
@@ -168,14 +170,15 @@
                 <div class="col-md-4">
                     <h4>How difficult did you find this test?</h4>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-1">
+                    <i class="fa fa-minus-circle fa-2x minus" aria-hidden="true"></i>
+                </div>
+                <div class="col-md-7">
                     <div>
                         <input type="text" id="difficulty_slider" name="difficulty" value="" />
                     </div>
                 </div>
-                <div class="col-md-2">
-                	<h4> Reset slider </h4>
-                    </div>
+                
             </div>
             <!-- end of a question -->
             <hr>
@@ -184,14 +187,15 @@
                 <div class="col-md-4">
                     <h4>How distracting was your environment? </h4>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-1">
+                    <i class="fa fa-minus-circle fa-2x minus" aria-hidden="true"></i>
+                </div>
+                <div class="col-md-7">
                     <div>
                         <input type="text" id="distraction_slider" name="distraction" value="" />
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <h4>Reset Slider </h4>
-                </div>
+               
             </div>
             <!-- end of a question -->
             <hr>
