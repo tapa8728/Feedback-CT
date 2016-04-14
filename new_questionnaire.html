@@ -26,6 +26,7 @@
         <script src="js/jquery-1.11.3.min.js"></script>
         <script src="js/ion.rangeSlider.js"></script>
         <link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css" />
         <!-- CSS and Ion Slider scripts-->
         <!-- <link rel=stylesheet href="/static/css/ionslider/normalize.css" />
         <link rel=stylesheet href="/static/css/ionslider/ion.rangeSlider.css" />
@@ -60,9 +61,9 @@
                 //prefix: "",
                 //postfix: "",
                 values: [
-                            "No Input", "Not difficult", "2",
-                            "3", "4", "Somewhat Difficult" ,"6", "7", "8",
-                            "9", "Very Difficult"
+                            "Not rated", "Not difficult", "2",
+                            "3", "4", "Somewhat difficult" ,"6", "7", "8",
+                            "9", "Very difficult"
                         ],
                 grid: true,
                 grid_num: 8,
@@ -81,10 +82,10 @@
                 //prefix: "",
                 //postfix: "",
                 values: [
-                            "No Input","No distraction", "2", "3",
+                            "Not rated","No distraction", "2", "3",
                             "4", "Some distractions",
                             "6", "7", "8",
-                            "9", "Frquent iterruptions"
+                            "9", "Frequent interruptions"
                         ],
                 grid: true,
                 grid_num: 10,
@@ -97,7 +98,7 @@
     <body>
         <div id="container-questionnaire">
         <h1>You have successfully completed the test! </h1><br>
-        <p class='lead'>Please answers these questions so we can improve this study.</p>
+        <p class='lead'>Please answer these questions so we can improve this study.</p>
 
         <div class="alert alert-warning hidden" id="noqs" role="alert">Please answer all of the questions</div>
 
@@ -111,7 +112,8 @@
 
                     <div class="col-md-7">
                         <div>
-                            <input id="input-21d" value="" type="number" class="rating" min=0 max=5 step=1 data-stars="5" data-size="sm">
+
+                            <input id="input-4" value="" type="number" class="rating rating-loading" min=0 max=5 step=1 data-stars="5" data-size="sm" data-show-clear="false" data-show-caption="true">
                         </div>
                     </div>
                      <div class="col-md-1">
@@ -129,37 +131,39 @@
                     <!--  <div class="col-md-1">
                         
                     </div> -->
-                    <div class="col-md-8">
-                        <div class="row">
+                    <div class="col-md-7">
+                        <!-- <div class="row">
                             <div class="col-md-1">
                                 <i class="fa fa-minus-circle fa-2x minus1" aria-hidden="true" title="Clear"></i>
                             </div>
-                            <div class="col-md-11">
-                                <input type="text" id="difficulty_slider" name="difficulty" value="" />
-                            </div>
-                        </div>
+                            <div class="col-md-11"> -->
+                        <input type="text" id="difficulty_slider" name="difficulty" value="" />
+                            <!-- </div>
+                        </div> -->
                     </div>
-                    
+                    <div class="col-md-1">
+                    </div>
+
                 </div>
                 <!-- end of a question -->
                 <hr>
                 <!-- beginning of a question -->
                 <div class="row">
                     <div class="col-md-4">
-                        <h4>How distracting was your environment? </h4>
+                        <h4>How distracting was your environment?</h4>
                     </div>
                    <!--  <div class="col-md-1">
                         
                     </div> -->
-                    <div class="col-md-8">
-                        <div class="row">
-                            <div class="col-md-1">
-                                <i class="fa fa-minus-circle fa-2x minus2" aria-hidden="true" title="Clear"></i>
-                            </div>
-                            <div class="col-md-11">
-                                <input type="text" id="distraction_slider" name="distraction" value="" />
-                            </div>
-                        </div>
+                    <div class="col-md-7">
+                        
+                    <!-- <div class="col-md-1">
+                        <i class="fa fa-minus-circle fa-2x minus2" aria-hidden="true" title="Clear"></i>
+                    </div> -->
+                        <input type="text" id="distraction_slider" name="distraction" value="" />
+                    
+                    </div>
+                    <div class="col-md-1">
                     </div>
                    
                 </div>
@@ -170,10 +174,28 @@
                     <div class="col-md-4">
                         <h4>Did anyone help you?</h4>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div>
-                            <input type="checkbox" checked data-toggle="toggle" data-on="Yes" data-off="No">
+                            <!-- <input type="checkbox" checked data-toggle="toggle" data-on="Yes" data-off="No"> -->
+                            <fieldset>
+                               <div class="switch-toggle well">
+                                <input id="month6" name="view3" value="no_resp"type="radio" checked>
+                                <label for="month6" onclick="">No Response</label>
+
+                                <input id="hour3" name="view3" value="yes"type="radio" >
+                                <label for="hour3" onclick="">Yes</label>
+                                                               
+
+                                <input id="year7" name="view3" value="no" type="radio">
+                                <label for="year7" onclick="">No</label>
+
+                                <a class="btn btn-primary btn-sm"></a>
+                              </div>
+                            </fieldset>
     					</div>
+                    </div>
+                    <div class="col-md-4">
+                        
                     </div>
                 </div>
                 <!-- end of a question -->
@@ -181,7 +203,7 @@
                 <!-- beginning of a question -->
                 <div class="row">
                     <div class="col-md-4">
-                        <h4>Please let us know if you have any additional comments that could help us improve your experience</h4>
+                        <h4>Please let us know if you have any additional comments that could help us improve your experience.</h4>
                     </div>
                     <div class="col-md-8">
                         <textarea id="openended" cols="80" rows="4" placeholder="Please enter feedback here. Thank you!"></textarea>
